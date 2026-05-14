@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@300;400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-brand-black: #050a05;
+  --color-brand-deep: #091409;
+  --color-brand-green: #00c853;
+  --color-brand-green-dark: #007a32;
+  --color-brand-green-glow: #00ff6a;
+  --color-brand-green-mid: #1e8a3e;
+  --color-brand-gold: #c9a84c;
+  --color-brand-text: #e8f5e9;
+
+  @keyframes grid-drift {
+    from { background-position: 0 0; }
+    to { background-position: 60px 60px; }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  @keyframes palmsway {
+    0%,100% { transform: rotate(0deg); }
+    25%      { transform: rotate(1.5deg); }
+    75%      { transform: rotate(-1.5deg); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-text font-sans;
+    direction: rtl;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-[10px] sm:text-[0.75rem] tracking-[0.5em] text-brand-green uppercase mb-2 opacity-70;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-white mb-6;
+  }
+
+  .section-title span {
+    @apply text-brand-green;
+  }
+
+  .section-body {
+    @apply text-base sm:text-lg leading-[1.9] text-brand-text/65 max-w-2xl;
+  }
+}
+
